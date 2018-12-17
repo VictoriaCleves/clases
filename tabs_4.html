@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif; 
+		}
+
+		nav{
+			padding: 10px;
+		}
+
+		nav ul{
+			list-style-type: none;
+			margin:0px;
+			padding: 0px;
+		}
+
+		nav ul li a{
+			display: block;
+			width: 200px;
+			padding: 5px;
+			text-decoration: none;
+			color:#333;
+		}
+
+		nav ul li a.activo{
+			border-left: 3px solid #999;
+		}
+
+		div{
+			padding:10px;
+			display: none;
+		}
+
+		div.activa{
+			display: block;
+		}
+
+	</style>
+</head>
+
+<body>
+	<nav>
+		<ul>
+			<li><a href="#contenido1" class="activo">0</a></li>
+			<li><a href="#contenido2">1</a></li>
+			<li><a href="#contenido3">2</a></li>
+		</ul>
+	</nav>
+			<div id="contenido1" class="activa"><p>hi</p></div>
+			<div id="contenido2"><p>you</p></div>
+			<div id="contenido3"><p>me</p></div>
+
+<script>
+	window.onload = function (){
+		var enlaces = document.getElementsByTagName("a");
+		var contenedores = document.getElementsByTagName("div");
+
+			for(var i=0; i< enlaces.length; i++){
+				enlaces[i].onclick=function(evento){
+				evento.preventDefault();
+				console.log(this.href);
+
+				for (var j=0; j< enlaces.length; j++){
+					enlaces[j].className ="";
+					contenedores[j].className ="";	
+				}
+				this.className ="activo";
+				document.getElementById(this.attributes.href.value.slice(1)).className="activa";
+			}
+		}
+	}
+		
+
+		 
+
+
+
+		
+		                                      
+
+	
+</script>	
+</body>
+</html>

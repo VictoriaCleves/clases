@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<style>
+
+	.activo{
+		font-weight: bold;
+	}
+
+</style>
+
+<h1 id="cualquiera">Hola</h1>
+<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<ul>
+	<li><a href="#" class="enlace">libreria1</a></li>
+	<li><a href="#" class="enlace">libreria2</a></li>
+	<li><a href="#" class="enlace">libreria3</a></li>
+	<li><a href="#" class="enlace">libreria4</a></li>
+</ul>
+<body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+
+		 <script>
+		   $(document).ready(function(){
+		  		$("#cualquiera").click(function(){
+		  			console.log($(this));
+		  		});
+
+		  	var parrafos = $("p");
+		  	console.log(parrafos.length);
+		  		$(".enlace").each(function(index){
+		  		$(this).click(function(evento){
+		  			evento.preventDefault();
+		  			$(".activo").removeClass("activo");
+		  			$(this).addClass("activo");
+		  			
+		  		});
+		  		});
+		  		console.log(parrafos.hasClass("parrafos"));
+		  });
+		 </script>
+
+</body>
+</html>

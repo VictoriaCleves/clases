@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+	<body>
+	 <script>
+	 	window.onload = function(){
+	 		var	persona = {
+	 					 nombre:"Raul",
+	 					 edad:25,
+	 					 profesion:"diseñador",
+	 					 saludos: function(){
+	 					 			return (this.edad);
+	 										}
+	 					};
+
+	 		//persona.apellido = "Diaz";//
+	 		//console.log(persona.saludos());//
+	 		//persona.saludos();//
+	 	
+	 		function suma (){
+	 			return arguments.length;	
+	 		}
+	 		console.log(suma(7,3,4,5,3,4))
+	 		var resultado = 0;
+	 			for (var i=0; i<arguments.length; i++){
+	 				resultado += arguments[i];
+	 			}
+	 			return resultado;      
+	 		}
+
+	 </script>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script> // condicional while que es igual que el if( esto funciona para hacer bucles)//
+		window.onload=function(){
+			var contador = 0;
+				while (contador < 8){
+				console.log(contador);
+				contador ++;
+				}
+
+			var nombre = "raquel";
+			nombre = nombre.split("");
+
+			var control = 0;
+				while (control < nombre.length){
+				switch(nombre[control]){//control para ir letra por letra del array//
+				case "a":
+				nombre[control] = "4";
+				break;
+				case "e":
+				nombre[control] = "3";
+				break;
+				case "i":
+				nombre[control] = "1";
+				break;
+				case "o":
+				nombre[control] = "0";
+				break;
+
+				default:
+                //nombre [control] = 8; ---> todo lo que no tenga case cambia a 8, en este caso)//
+				break;
+				} 
+
+				control ++; // se utiliza para no caer en un bucle infinito ( siempre)//
+			}
+
+			console.log(nombre.join(""));
+			
+			var prueba = [];
+			prueba.push("hola");
+			console.log (prueba);
+
+
+		}
+	</script>
+
+</body>
+</html>

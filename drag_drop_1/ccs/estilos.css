@@ -1,0 +1,20 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+.contenedor{
+	position: relative;
+	margin: 100px auto 0;
+	width: 498px;
+	height: 498px;
+	border: 1px solid  #333;
+}
+
+.cuadrado{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-color: #600;
+}

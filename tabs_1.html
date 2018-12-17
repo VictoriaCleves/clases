@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif; 
+		}
+
+		nav{
+			padding: 10px;
+		}
+
+		nav ul{
+			list-style-type: none;
+			margin:0px;
+			padding: 0px;
+		}
+
+		nav ul li a{
+			display: block;
+			width: 200px;
+			padding: 5px;
+			text-decoration: none;
+			color:#333;
+		}
+
+		nav ul li a.activo{
+			border-left: 3px solid #999;
+		}
+
+		div{
+			padding:10px;
+			display: none;
+		}
+
+		div.activa{
+			display: block;
+
+		}
+
+
+	</style>
+</head>
+
+<body>
+<script>
+	window.onload = function () {
+		var tabs =[];
+			for (var i = 0; i<3; i++) {
+			tabs[i]={titulo:"tabs "+i, contenido:"contenido de la tabs "+i};
+		}
+		console.log(tabs)
+		var navegacion = document.createElement("nav");
+		console.log(navegacion)
+
+		var lista = document.createElement("ul");
+		for (var i=0; i<tabs.length; i++){
+			 var item = document.createElement("li");
+			 var enlace = document.createElement("a");
+			 enlace.href="#";
+			 enlace.className=(i==0)?"activo":"";
+			 enlace.innerHTML = tabs[i].titulo;
+			 item.appendChild(enlace);
+			 lista.appendChild(item);
+		}
+
+		navegacion.appendChild(lista);
+		document.body.appendChild(navegacion);
+
+		for(var i=0; i< tabs.length; i++){
+			var contenedor = document.createElement("div");
+			contenedor.className = (i==0)?"activa":""; //si es verdadero se "activa" si no, no pondra nada "" (condicion, verdadero,falso= operador ternario//
+			var parrafo = document.createElement("p");
+				parrafo.innerHTML=tabs[i].contenido;
+				contenedor.appendChild(parrafo);
+				document.body.appendChild(contenedor);
+		}
+
+		var enlaces = document.getElementsByTagName("a");
+		console.log(enlaces)
+
+		var contenedores = document.getElementsByTagName("div");    
+
+		for (var i=0; i< enlaces.length; i++) {
+		     /*enlaces[i].onclick=function(evento){
+		     	evento.preventDefault()
+		     	console.log(i)}*/
+		     	(function(indice){
+		     	enlaces[indice].onclick=function(evento){
+		     	evento.preventDefault();
+		     	console.log(indice);
+
+		     	for (var j=0; j< enlaces.length; j++) {
+		     	enlaces[j].className = "";
+		     	contenedores[j].className = "";
+		     			 }
+
+		     	enlaces[indice].className = "activo";
+		     	contenedores[indice].className = "activa";
+		     		}
+		     	})(i);
+
+		     }         
+
+
+
+		                                      
+
+	}
+</script>	
+</body>
+</html>
